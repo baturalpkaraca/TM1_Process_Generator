@@ -12,7 +12,7 @@ from TM1py.Services import TM1Service
 # with TM1Service(address="localhost", port=29571, ssl=True, user="admin", password="", namespace="") as tm1:
 #     pass
 
-# Cloud
+# Cloud Prod
 with TM1Service(
         base_url='https://catalyst.planning-analytics.cloud.ibm.com/tm1/api/tm1/',
         user="catalyst01_tm1_automation",
@@ -22,3 +22,14 @@ with TM1Service(
         verify=True,
         async_requests_mode=True) as tm1:
     pass
+
+# Cloud Test
+# with TM1Service(
+#         base_url='https://catalystest.planning-analytics.cloud.ibm.com/tm1/api/tm1/',
+#         user="catalystest01_tm1_automation",
+#         namespace="LDAP",
+#         password="COorj8U2s4xvMb",
+#         ssl=True,
+#         verify=True,
+#         async_requests_mode=True) as tm1:
+#     pass
