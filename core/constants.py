@@ -2,6 +2,7 @@ system_theme_color = '#303030'
 source_label_color = '#00C957'
 target_label_color = '#EE2C2C'
 
+#pyinstaller main.py --onefile -w
 
 def prolog(sourceCubeName, targetCubeName, sourceCount, targetCount, dimSourceNames, dimTargetNames,
            selected_items_source, selected_items_target):
@@ -94,6 +95,13 @@ VIEWSUBSETASSIGN(v_CubeSourceName, v_ViewSourceName, v_DimSourceName{j + 1}, v_S
     # TARGET CUBE
     p1_t = f'''
 #******* Target Cube ***********************************
+
+v_CubeName = '{targetCubeName}';
+v_ViewName = 'VZO'|'_'|v_CubeName|'_'|vProcessName;'''
+    p1_t_v2 = f'''
+#******* Target Cube ***********************************
+
+vProcessName = GetProcessName;
 
 v_CubeName = '{targetCubeName}';
 v_ViewName = 'VZO'|'_'|v_CubeName|'_'|vProcessName;'''
@@ -209,7 +217,7 @@ VIEWSUBSETASSIGN(v_CubeName, v_ViewName, v_Dim{}Name, v_Subs{}Name);'''.format(j
         return '{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}{}\n{}'.format(p0, p1, tempPrologSource, tempP3source, p4, tempSource, p6,
                                                              tempMdx, tempAssign, p9)
     elif sourceCubeName == 'Select Source Cube' and targetCubeName != 'Select Target Cube':
-        return '{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}{}\n{}'.format(p0, p1_t, tempPrologSource_t, tempP3source_t, p4_t,
+        return '{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}{}\n{}'.format(p0, p1_t_v2, tempPrologSource_t, tempP3source_t, p4_t,
                                                              tempSource_t, p6_t, tempMdx_t, tempAssign_t, p9_t)
     else:
         return '{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}{}\n{}'.format(p0, p1, tempPrologSource,
