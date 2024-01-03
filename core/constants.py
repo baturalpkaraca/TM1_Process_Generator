@@ -2,7 +2,6 @@ system_theme_color = '#303030'
 source_label_color = '#00C957'
 target_label_color = '#EE2C2C'
 
-#pyinstaller main.py --onefile -w
 
 def prolog(sourceCubeName, targetCubeName, sourceCount, targetCount, dimSourceNames, dimTargetNames,
            selected_items_source, selected_items_target):
