@@ -1,15 +1,16 @@
 from TM1py.Services import TM1Service
 
 # pyinstaller main.py --onefile -w
+#python -m PyInstaller --onefile -w main.py
 
-# On-premise BÜTÇE
-with TM1Service(address="localhost", port=27401, ssl=True, user="cognos", password="edc*123456",
-                namespace="Koctas") as tm1:
-    pass
-
-# On-premise IFRS
-# with TM1Service(address="localhost", port=51603, ssl=True, user="cognos", password="edc*123456", namespace="Koctas") as tm1:
+# On-premise Koçtaş BÜTÇE
+# with TM1Service(address="localhost", port=27401, ssl=True, user="cognos", password="edc*123456",
+#                 namespace="Koctas") as tm1:
 #     pass
+
+# On-premise Koçtaş IFRS
+with TM1Service(address="localhost", port=51603, ssl=True, user="cognos", password="edc*123456", namespace="Koctas") as tm1:
+    pass
 
 # Migros
 # with TM1Service(address="localhost", port=25920, ssl=True, user="cognos", password="Butce2010", namespace="MIGROS") as tm1:
